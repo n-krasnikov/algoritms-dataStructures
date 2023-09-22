@@ -2,6 +2,9 @@ import './style.css'
 
 import { bubbleSort, quickSort } from './src';
 import { Queue } from './src';
+import { LinkedList } from './src';
+import { Stack } from './src';
+import { TreeNode } from './src';
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -11,15 +14,15 @@ document.querySelector('#app').innerHTML = `
   </div>
 `
 
-const queue = new Queue()
-queue.print();
-queue.push(5);
-queue.push(0);
-queue.push(3);
-queue.print();
+const tree = new TreeNode(8)
+tree.insert(3);
+tree.insert(10);
+tree.insert(14);
+tree.insert(1);
+tree.insert(6);
+tree.insert(4);
+tree.insert(7);
+tree.insert(13);
 
 
-const arr = [1,7,2,9,4,0,3]
-console.log(arr)
-console.log(bubbleSort(arr))
-console.log(quickSort(arr))
+tree.travel()
