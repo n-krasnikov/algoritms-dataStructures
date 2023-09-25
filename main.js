@@ -1,6 +1,6 @@
 import './style.css'
 
-import { bubbleSort, quickSort } from './src';
+import { bubbleSort, quickSort, mergeSort } from './src';
 import { Queue } from './src';
 import { LinkedList } from './src';
 import { Stack } from './src';
@@ -13,16 +13,7 @@ document.querySelector('#app').innerHTML = `
     <h1>Data Structures</h1>
   </div>
 `
-
-const tree = new TreeNode(8)
-tree.insert(3);
-tree.insert(10);
-tree.insert(14);
-tree.insert(1);
-tree.insert(6);
-tree.insert(4);
-tree.insert(7);
-tree.insert(13);
-
-
-tree.travel()
+const arr = [55,3,999,-7,6,1,9,2,8,3,7,4,6,5,0,0]
+console.log(mergeSort(arr))
+console.log(quickSort(arr))
+console.log(bubbleSort(arr))
