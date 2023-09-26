@@ -1,3 +1,5 @@
+import { default as Queue } from './queue'
+
 class TreeNode {
   constructor(value, parent=null) {
     this.value = value;
@@ -54,11 +56,24 @@ class TreeNode {
     }
   }
 
-  travel() {
+  travelD() {
     console.log(this.value)
-    if (this.left) this.left.travel();
-    if (this.right) this.right.travel();
+    if (this.left) this.left.travelD();
+    if (this.right) this.right.travelD();
   }
+
+  travelB() {
+    const queue = new Queue();
+    queue.push(this);
+    while (queue.length !== 0) {
+      const node = queue.pop().value;
+      console.log(node.value);
+      if(node?.left) queue.push(node.left);
+      if(node?.right) queue.push(node.right);
+
+    }
+  }
+
 
 }
 
