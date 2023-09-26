@@ -1,10 +1,10 @@
 const quickSort = (arr) => {
   if (arr.length <= 1) return arr;
 
-  const pointer = arr[0];
+  const pointer = arr.pop();
   const [left, right] = [[],[]];
 
-  for (let i = 1; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     (pointer > arr[i])
       ? left.push(arr[i])
       : right.push(arr[i]);
