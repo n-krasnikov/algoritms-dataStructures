@@ -45,19 +45,21 @@ class TreeNode {
       if (this.right) {
         this.right.insert(value);
       } else {
-        this.right = new TreeNode(value, this);
+        this.addRight(value);
+        return this.right
       }
     } else {
       if (this.left) {
         this.left.insert(value);
       } else {
-        this.left = new TreeNode(value, this);
+        this.addLeft(value);
+        return this.left
       }
     }
   }
 
   travelD() {
-    console.log(this.value)
+    console.log(this.value);
     if (this.left) this.left.travelD();
     if (this.right) this.right.travelD();
   }
@@ -68,13 +70,22 @@ class TreeNode {
     while (queue.length !== 0) {
       const node = queue.pop().value;
       console.log(node.value);
-      if(node?.left) queue.push(node.left);
-      if(node?.right) queue.push(node.right);
-
+      
+      if(node.left) queue.push(node.left);
+      if(node.right) queue.push(node.right);
     }
   }
 
-
+  find(target) {
+    if(this.value === target) return this;
+    if(target > this.value) {
+      if(this.right) return this.right.find(target);
+      return null;
+    } else {
+      if(this.left) return this.left.find(target);
+      return null;
+    }
+  }
 }
 
 export default TreeNode;
