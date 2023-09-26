@@ -7,26 +7,27 @@ class Node {
 
 class Queue {
   constructor() {
-    this.lenght = 0;
+    this.length = 0;
     this.head = null;
     this.tail = null;
   }
 
   push(value) {
     const node = new Node(value);
-    if (this.lenght === 0) {
+    if (this.length === 0) {
       this.head = node;
       this.tail = node;
     } else {
       this.tail.next = node;
       this.tail = node;
     }
-    this.lenght ++;
+    this.length ++;
   }
 
   pop() {
     const node = this.head;
-    this.head = node.next;
+    this.head = node?.next ?? null;
+    this.length --;
     return node;
   }
 
