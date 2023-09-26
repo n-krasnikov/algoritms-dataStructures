@@ -36,8 +36,12 @@ root.insert(9)
 root.insert(7)
 
 
+console.log('------------')
 root.travelD()
 console.log('------------')
 root.travelB()
+console.log('------------')
 
-console.log(root.isRoot())
+console.log(root)
+console.log(root.find(10))
+console.log(root.find(4))
